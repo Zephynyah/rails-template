@@ -247,11 +247,11 @@ end
 
 def add_yarn_lint_and_run_fix
   packages = %w[
-    eslint@^8.43.0
+    eslint
     eslint-config-prettier
     eslint-plugin-prettier
     postcss
-    prettier@^2.8.8
+    prettier
     stale-dep
     stylelint
     stylelint-config-standard
@@ -260,7 +260,7 @@ def add_yarn_lint_and_run_fix
   ]
   add_package_json_script("fix": "npm run -- lint:js --fix && npm run -- lint:css --fix")
   add_package_json_script("lint": "npm run lint:js && npm run lint:css")
-  add_package_json_script("lint:js": "stale-dep && eslint 'app/{components,frontend,javascript}/**/*.{js,jsx}'")
+  # add_package_json_script("lint:js": "stale-dep && eslint 'app/{components,frontend,javascript}/**/*.{js,jsx}'")
   add_package_json_script("lint:css": "stale-dep && stylelint 'app/{components,frontend,assets/stylesheets}/**/*.css'")
   add_package_json_script("postinstall": "stale-dep -u")
   run_with_clean_bundler_env "yarn add #{packages.join(' ')}"
