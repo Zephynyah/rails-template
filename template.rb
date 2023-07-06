@@ -247,7 +247,7 @@ end
 
 def add_yarn_lint_and_run_fix
   packages = %w[
-    eslint
+    eslint@^8.43.0
     eslint-config-prettier
     eslint-plugin-prettier
     postcss
