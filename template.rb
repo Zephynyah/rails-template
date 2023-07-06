@@ -251,7 +251,7 @@ def add_yarn_lint_and_run_fix
     eslint-config-prettier
     eslint-plugin-prettier
     postcss
-    prettier
+    prettier@^2.8.8
     stale-dep
     stylelint
     stylelint-config-standard
